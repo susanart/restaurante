@@ -78,24 +78,22 @@
             </div>
 
             <div class="col align-self-start formulario" >
-                <form >
+                <form  target="_blank"  action="https://formsubmit.co/susanaarjs@gmail.com" method="POST">
                   <div style="margin-left: 2rem;">
                     <h4>  Formulario de Reserva</h4> <br>
                   </div>
-                  
-
                   <div class="form-group"> 
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre" required>
+                    <input type="text" name="Nombre" class="form-control" id="formGroupExampleInput" placeholder="Nombre Completo" required>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Correo electronico " required>
+                    <input type="email" name="email" class="form-control" id="formGroupExampleInput" placeholder="Correo electronico " required>
                   </div>
                   <div class="form-group">
-                    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Telefono" required>
+                    <input type="number" name="Telefono" class="form-control" id="formGroupExampleInput" placeholder="Telefono" required>
                   </div>
                   <div class="form-group col-md-4">
                         
-                        <select id="inputState" class="form-control" >
+                        <select id="inputState" class="form-control" name="Servicio">
                           <option selected>Selecciona el Servicio</option >
                           <option>Cumpleaños</option>
                           <option>Aniversario</option>   
@@ -107,33 +105,18 @@
                     </div>
             
                     <div class="form-group col-md-4">
-                      <input type="number" name="tentacles" min="1" max="100" class="form-control" id="formGroupExampleInput2" placeholder="Número de Personas" required>
-                    </div>
-                    
-             
-
-                    <div class="form-group">
-                      
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre Completo" required>
+                      <input type="number" name="No. Personas" min="1" max="100" class="form-control" id="formGroupExampleInput2" placeholder="Número de Personas" required>
                     </div>
                     <div class="form-group ">
-                      <input type="date"  name="trip-start"
-                        
-                         class="form-control" id="fechaActual" required >
+                      <input type="date"  name="Fecha" class="form-control" id="fechaActual" required >
                     </div>
                     <div class="form-group ">
                       <p>Por favor ingrese una hora acorde entre las 9:00 AM y 10:00 PM </p>
-                      <input type="time"  name="trip-start"
-                          min="9:00" max="22:00"
-                         class="form-control" id="fechaActual" required >
-                         
+                      <input type="time"  name="Hora" class="form-control" id="fechaActual" required >
                     </div>
-
-                      <div class="form-group">
+                    <div class="form-group">
                         <button type="submit" class="btn btn-warning" >Enviar</button>
-
-                      </div>
-                      
+                    </div>
                   </form>
             </div>
         </div>
