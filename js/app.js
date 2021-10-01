@@ -10,3 +10,16 @@ window.onload = function(){
     document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
   }
 
+  // class Carrito {
+
+  //   //Metodo para añadir producto
+  //   comprarProducto(e){
+  //     e.preventDefault()
+  //     if(e.target.classList.constains('agregar-carrito')){
+  //       const producto = e.target.parentElement.parentElement;
+  //       //this.leerDatosProducto(producto)
+  //       console.log(producto);
+  //     }
+  //   }
+
+  // }
