@@ -81,10 +81,17 @@ body {
   }
 
   #descarga-menu{
+      
       text-decoration: none;
       font-size: 20px;
       color: black;
   }
+  #hacer-pedido{
+    
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
 
   #social-media {
       list-style: none;
@@ -122,7 +129,6 @@ body {
       width: 300px;
       
   }
-
   .img-modal{
       width: 400px;
       height: 400px;
@@ -232,4 +238,7 @@ body {
 
   #cargando {
     display: none;
+}
+#carrito{
+   
 }
