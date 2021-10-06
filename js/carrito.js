@@ -141,12 +141,17 @@ class Carrito {
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto){
             const row = document.createElement('tr');
-            row.innerHTML = `
+            row.innerHTML = ` 
                 <td>
                     <img src="${producto.imagen}" width=100>
                 </td>
-                <td>${producto.titulo}</td>
-                <td>${producto.precio}</td>
+                <td>
+                ${producto.titulo}
+                
+                </td>
+                <td>
+                ${producto.precio}
+                </td>
                 <td>
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
@@ -202,7 +207,7 @@ class Carrito {
      //Calcular montos
      calcularTotal(){
         let productosLS;
-        let total = 0, igv = 0, subtotal = 0;
+        let total = 0, subtotal = 0;
         productosLS = this.obtenerProductosLocalStorage();
         for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
@@ -210,11 +215,11 @@ class Carrito {
             
         }
         
-        igv = parseFloat(total * 0.18).toFixed(2);
-        subtotal = parseFloat(total-igv).toFixed(2);
+        
+        subtotal = parseFloat(total).toFixed(2);
 
         document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
-        document.getElementById('igv').innerHTML = "S/. " + igv;
+        
         document.getElementById('total').value = "S/. " + total.toFixed(2);
     }
 
@@ -239,6 +244,11 @@ class Carrito {
         else {
             console.log("click afuera");
         }
+    }
+
+    procesarCompra(){
+       this.vaciarCarrito();
+
     }
 
 
