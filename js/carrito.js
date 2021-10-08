@@ -218,9 +218,9 @@ class Carrito {
         
         subtotal = parseFloat(total).toFixed(2);
 
-        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
+        document.getElementById('subtotal').innerHTML = "COP/. " + subtotal;
         
-        document.getElementById('total').value = "S/. " + total.toFixed(2);
+        document.getElementById('total').value = "COP/. " + total.toFixed(2);
     }
 
     obtenerEvento(e) {

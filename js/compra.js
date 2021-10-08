@@ -60,10 +60,10 @@ function procesarCompra() {
         productosLS = compra.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
             textArea.innerHTML += `
-                 Producto : ${producto.titulo} <br>
-                 Precio : ${producto.precio} <br>
-                 Cantidad: ${producto.cantidad} <br>
-                --------------------------------------------- <br>
+                 Producto : ${producto.titulo}
+                 Precio : ${producto.precio}
+                 Cantidad: ${producto.cantidad} 
+                --------------------------------------------- 
                 `;
         });
 
