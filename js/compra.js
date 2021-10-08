@@ -42,10 +42,68 @@ function procesarCompra() {
             title: 'Oops...',
             text: 'Ingrese todos los campos requeridos',
             showConfirmButton: false,
-            timer: 2000000
+            timer: 2000
         })
     }
-    
+    else {
+
+        //aqui se coloca el user id generado en el emailJS
+        emailjs.init('user_KsuuAW5pv67eq4UdIupLo');
+
+        /* AGREGAR DATOS DETALLE DEL PEDIDO A UN TEXT AREA */
+        const textArea = document.createElement('textarea');
+        textArea.id = "detalleCompra";
+        textArea.name = "detalleCompra";
+        textArea.cols = 60;
+        textArea.rows = 10;
+        textArea.hidden = true;
+        productosLS = compra.obtenerProductosLocalStorage();
+        productosLS.forEach(function (producto) {
+            textArea.innerHTML += `
+                 Producto : ${producto.titulo} <br>
+                 Precio : ${producto.precio} <br>
+                 Cantidad: ${producto.cantidad} <br>
+                --------------------------------------------- <br>
+                `;
+        });
+
+        carrito.appendChild(textArea);
+
+        /* ------------------------- */
+
+        document.getElementById('procesar-pago')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const cargandoGif = document.querySelector('#cargando');
+                cargandoGif.style.display = 'block';
+
+                const enviado = document.createElement('img');
+                enviado.src = 'img/mail.gif';
+                enviado.style.display = 'block';
+                enviado.width = '150';
+
+                const serviceID = 'default_service';
+                const templateID = 'template_3yvfrvu'; 
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        cargandoGif.style.display = 'none';
+                        document.querySelector('#loaders').appendChild(enviado);
+
+                        setTimeout(() => {
+                            compra.vaciarLocalStorage();
+                            enviado.remove();
+                            window.location = "index.html";
+                        }, 2000);
+                    }, (err) => {
+                        cargandoGif.style.display = 'none';
+                        alert("Error al enviar el email\r\n Response:\n " + JSON.stringify(err));
+                    });
+            });
+
+
+    }
 }
 
 
